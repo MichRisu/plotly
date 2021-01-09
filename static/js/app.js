@@ -1,8 +1,24 @@
 // Use D3 library to read in samples.json
-d3.json("samples.json").then((importedData) => {
-    console.log(importedData);
-    // var bbData = importedData;
-});
+
+// Create helper function to select data
+function unpack(rows, index) {
+    return rows.map(function(row){
+        return row[index];
+    });
+};
+
+function buildPlot() {
+    d3.json("data/samples.json").then(function(bbData) {
+        // Grab values from the json object to build the plots
+        var sample_values = bbData.samples.sample_values;
+        console.log(sample_values);
+    });
+};
+
+buildPlot();
+// d3.json("data/samples.json").then(function(bbData){
+//     console.log(bbData);
+// });
 
 // Create horizontal bar chart with a dropdown menu to display top 10 OTUs for that individual
 
