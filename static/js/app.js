@@ -88,15 +88,15 @@ d3.json("samples.json").then(function(data){
         });    
     };
 
-    // Create init function for default plot
-    function init() {
-        buildPlots();
-    };
-
     // Create the function for the change event
     function optionChanged(id){
         buildPlots(id);
         buildDemo(id);
+    };
+    
+    // Create init function for default plot
+    function init() {
+        buildPlots();
     };
     
     // Call the init function to load default data
